@@ -1,38 +1,38 @@
 class Messenger {
-    constructor(runtime) {
-        this.runtime  = runtime;
-        this.listener = () => {};
-        this.ports    = [];
+  constructor(runtime) {
+    this.runtime = runtime;
+    this.listener = () => {};
+    this.ports = [];
 
-        this.runtime.onConnect.addListener((port) => this.handleConnect(port));
+    this.runtime.onConnect.addListener(port => this.handleConnect(port));
+  }
+
+  onMessage(listener) {
+    this.listener = listener;
+  }
+
+  handleConnect(port) {
+    if (port.name !== 'dark-youtube') {
+      return;
     }
 
-    onMessage(listener) {
-        this.listener = listener;
-    }
+    this.ports.push(port);
 
-    handleConnect(port) {
-        if (port.name !== 'dark-youtube') {
-            return;
-        }
+    port.onMessage.addListener(request => this.listener(request));
+    port.onDisconnect.addListener(() => this.removePort(port));
+  }
 
-        this.ports.push(port);
+  removePort(port) {
+    this.ports.splice(this.ports.indexOf(port), 1);
+  }
 
-        port.onMessage.addListener((request) => this.listener(request));
-        port.onDisconnect.addListener(() => this.removePort(port));
-    }
-
-    removePort(port) {
-        this.ports.splice(this.ports.indexOf(port), 1);
-    }
-
-    notify(message) {
-        this.ports.forEach((port) => {
-            try {
-                port.postMessage(message);
-            } catch(e) {
-                console.error('Could not send message to port', e);
-            }
-        });
-    }
+  notify(message) {
+    this.ports.forEach(port => {
+      try {
+        port.postMessage(message);
+      } catch (e) {
+        console.error('Could not send message to port', e);
+      }
+    });
+  }
 }

@@ -1,4 +1,4 @@
-# Dark YouTube plugin for Chrome
+# Dark Material YouTube plugin for Chrome
 [![Build Status](https://travis-ci.org/georgyangelov/Dark-youtube-plugin-chrome.svg?branch=master)](https://travis-ci.org/georgyangelov/Dark-youtube-plugin-chrome)
 
 A plugin that changes the Youtube skin to a black one.

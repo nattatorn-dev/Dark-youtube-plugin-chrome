@@ -1,8 +1,8 @@
 {
   "name": "brunch-app",
-  "description": "Makes YouTube go dark-side",
+  "description": "Makes YouTube go material dark-side",
   "author": "",
-  "version": "2.0.0",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": ""

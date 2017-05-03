@@ -1,29 +1,31 @@
 class ConfigStore {
-    defaults() {
-        return {
-            active: true
-        };
+  defaults() {
+    return {
+      active: true,
+    };
+  }
+
+  get() {
+    var config = localStorage.getItem('youtube_skin');
+
+    if (!config) {
+      return this.defaults();
     }
 
-    get() {
-        var config = localStorage.getItem('youtube_skin');
+    return JSON.parse(config);
+  }
 
-        if (!config) {
-            return this.defaults();
-        }
+  set(config) {
+    var current = this.get();
 
-        return JSON.parse(config);
-    }
+    Object.keys(config).forEach(key => {
+      current[key] = config[key];
+    });
 
-    set(config) {
-        var current = this.get();
+    this.replace(config);
+  }
 
-        Object.keys(config).forEach((key) => { current[key] = config[key]; });
-
-        this.replace(config);
-    }
-
-    replace(config) {
-        localStorage.setItem('youtube_skin', JSON.stringify(config));
-    }
+  replace(config) {
+    localStorage.setItem('youtube_skin', JSON.stringify(config));
+  }
 }

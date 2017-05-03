@@ -1,7 +1,7 @@
 {
-  "name": "Dark Skin for Youtube™",
-  "version": "2.0.2",
-  "description": "Makes Youtube go dark-side",
+  "name": "Material Dark Skin for Youtube™",
+  "version": "0.0.2",
+  "description": "Makes Youtube go Material dark-side",
   "manifest_version": 2,
   "permissions": [
     "http://www.youtube.com/"
