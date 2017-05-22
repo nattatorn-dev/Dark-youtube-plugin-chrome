@@ -10,3 +10,100 @@ ytd-watch {
     a { color: $link-color; }
   }
 }
+// like button
+//#button.ytd-toggle-button-renderer {
+//  color: cornflowerblue;
+//  background-color: transparent;
+//  text-transform: inherit;
+//}
+
+
+// fix css
+#label.ytd-compact-link-renderer,
+ytd-multi-page-menu-renderer {
+  color: $text-color;
+}
+//ytd-multi-page-menu-renderer {
+//
+//}
+
+// header playlist
+.header.ytd-playlist-panel-renderer {
+  background-color: #1c1c1f;
+}
+
+// youtube search
+input.ytd-searchbox{
+  color: #1c1c1f;
+}
+
+ytd-menu-service-item-renderer:hover,
+a.ytd-menu-navigation-item-renderer:hover {
+  background-color: rgb(50, 50, 53);
+}
+//ytd-simple-menu-header-renderer,
+ytd-confirm-dialog-renderer[dialog][dialog][dialog] {
+  border-bottom: 1px solid $border-color;
+  background-color: $menu-background;
+}
+.style-scope.ytd-button-renderer.style-brand{
+  color: hsl(3, 81.8%, 49.6%);
+}
+.ytd-subscribe-button-renderer {
+  color: #1c1c1f;
+}
+// subscribe videopage
+paper-button[subscribed].ytd-subscribe-button-renderer {
+  background: $subscribe-color;
+}
+// subscribe homepage
+.ytd-video-renderer .badge yt-icon, ytd-grid-video-renderer .badge yt-icon, ytd-grid-playlist-renderer .badge yt-icon {
+  fill: $subscribe-color;
+}
+
+ytd-menu-service-item-renderer:focus,
+paper-item:focus {
+  position: relative;
+  outline: 0;
+  color: $text-focus-color;
+}
+
+.ytd-add-to-playlist-renderer,
+paper-menu,
+ytd-menu-service-item-renderer:hover,
+.ytd-sharing-renderer {
+  background-color: $menu-background;
+}
+//.ytd-add-to-playlist-renderer,
+iron-dropdown,
+#playlists.ytd-add-to-playlist-renderer,
+#share-label.ytd-sharing-renderer,
+#share-target-wrapper.ytd-sharing-renderer,
+#start-at-wrapper.ytd-sharing-renderer,
+#header.ytd-add-to-playlist-renderer {
+  border-bottom: 1px solid $border-color;
+  background-color: $menu-background;
+  color: $text-color;
+}
+
+#share-url.ytd-sharing-renderer {
+  margin-right: 0;
+}
+
+ytd-comment-action-buttons-renderer,
+// profile #content#
+.ytd-metadata-with-image-row-renderer,
+#metadata-line.ytd-video-meta-block {
+  color: $text-description-color;
+}
+
+.yt-next-continuation {
+  color: #1c1c1f;
+}
+// autoplay
+#upnext.ytd-compact-autoplay-renderer,
+.item.yt-dropdown-menu,
+#item-title.ytd-feedback-elicitation-single-question-renderer,
+#icon-label.yt-dropdown-menu {
+  color: $text-color;
+}

@@ -19,7 +19,6 @@ class StyleSwitcher {
 
     this.active = true;
     this.head.appendChild(this.link);
-    document.cookie = 'VISITOR_INFO1_LIVE=Qa1hUZu3gtk';
   }
 
   deactivate() {
@@ -40,16 +39,13 @@ class StyleSwitcher {
   }
 
   styleURL() {
-    if (document.querySelector('ytd-app')) {
-      return chrome.extension.getURL('styles.css');
-    } else {
-      return chrome.extension.getURL('legacy_styles.css');
-    }
+    return chrome.extension.getURL('styles.css');
   }
 }
 
 const port = chrome.runtime.connect({name: 'dark-youtube'});
 
+document.cookie = 'VISITOR_INFO1_LIVE=Qa1hUZu3gtk';
 const interval = setInterval(() => {
   if (document.querySelector('body > *')) {
     try {
